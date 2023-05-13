@@ -1,0 +1,28 @@
+#########################        BRITS CONFIG        ##########################
+
+#### Dataset params ###########################################################
+val_len: 0.1
+window: 24  # [24, 36]
+stride: 1
+use_exogenous: False
+
+#### Training params ##########################################################
+whiten_prob: 0.05
+scale_target: True
+epochs: 300
+loss_fn: l1_loss
+lr_scheduler: cosine
+lr: 0.001
+batch_size: 32
+batches_epoch: 160
+
+#### Model params #############################################################
+model_name: 'stcn'
+hidden_size: 64  # [64, 128, 256]
+ff_size: 64
+horizon: 1
+temporal_kernel_size: 4
+spatial_kernel_size: 2
+n_layers: 2
+exog_size: 0
+dropout: 0.1

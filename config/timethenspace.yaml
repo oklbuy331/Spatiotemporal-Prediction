@@ -1,0 +1,24 @@
+#########################        BiGAN CONFIG        ##########################
+
+#### Dataset params ###########################################################
+
+window: 84 # [24, 36]
+horizon: 24
+stride: 1
+use_exogenous: False
+#### Training params ##########################################################
+whiten_prob: 0.05
+scale_target: True
+
+epochs: 300
+loss_fn: l1_loss
+lr_scheduler: cosine
+lr: 0.001
+batch_size: 32
+batches_epoch: 160
+
+#### Model params #############################################################
+model_name: 'timethenspace'
+hidden_size:  256 # [64, 128, 256]
+rnn_layers: 2
+gnn_kernel: 4

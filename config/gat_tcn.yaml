@@ -1,0 +1,32 @@
+#########################        BRITS CONFIG        ##########################
+
+#### Dataset params ###########################################################
+#dataset_name: [la_point, bay_point, la_bock, bay_bock, air, air36]
+val_len: 0.1
+
+window: 48
+horizon: 1 # [24, 36]
+stride: 1
+
+#### Training params ##########################################################
+whiten_prob: 0.05
+scale_target: True
+
+epochs: 3000
+loss_fn: l1_loss
+lr_scheduler: cosine
+lr: 0.005
+batch_size: 32
+batches_epoch: 160
+
+#### Model params #############################################################
+model_name: 'gat_tcn'
+hidden_size: 128 # [64, 128, 256]
+conv_kernel_size: 7 # must use odd values
+tcn_kernel_size: 7
+window_size: 48
+n_features: 17
+out_dim: 17
+dropout: 0.1
+tcn_levels: 4
+

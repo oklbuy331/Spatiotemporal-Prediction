@@ -1,0 +1,30 @@
+#########################        BRITS CONFIG        ##########################
+
+#### Dataset params ###########################################################
+#dataset_name: [la_point, bay_point, la_bock, bay_bock, air, air36]
+val_len: 0.1
+
+window: 84  # [24, 36]
+stride: 1
+
+#### Training params ##########################################################
+whiten_prob: 0.05
+scale_target: True
+
+epochs: 300
+loss_fn: l1_loss
+lr_scheduler: cosine
+lr: 0.005
+batch_size: 32
+batches_epoch: 160
+
+#### Model params #############################################################
+model_name: 'dcrnn'
+hidden_size: 64  # [64, 128, 256]
+ff_size: 64
+horizon: 24
+temporal_kernel_size: 4
+spatial_kernel_size: 4
+n_layers: 4
+exog_size: 2
+dropout: 0.1

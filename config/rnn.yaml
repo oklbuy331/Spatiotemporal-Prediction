@@ -1,0 +1,30 @@
+#########################        BiGAN CONFIG        ##########################
+
+#### Dataset params ###########################################################
+
+window: 24 # [24, 36]
+horizon: 1
+stride: 1
+
+#### Training params ##########################################################
+whiten_prob: 0.05
+scale_target: True
+
+epochs: 400
+loss_fn: l1_loss
+lr_scheduler: cosine
+lr: 0.001
+batch_size: 32
+batches_epoch: 160
+
+#### Model params #############################################################
+model_name: 'rnn'
+hidden_size:  256 # [64, 128, 256]
+ff_size: 64
+rec_layers: 2
+ff_layers: 1
+rec_dropout: 0.
+ff_dropout: 0.
+exog_size: 0
+use_exogenous: False
+cell_type: 'gru'
